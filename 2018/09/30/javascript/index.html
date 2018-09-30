@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">229</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">238</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -402,8 +402,17 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>Javasciprt is not a class-based language even there are classes since ES5.<br>It’s a prototype-based scripting language</p>
-<h3 id="Types-in-JavaScript"><a href="#Types-in-JavaScript" class="headerlink" title="Types in JavaScript"></a>Types in JavaScript</h3><p>Numbers, Strings, Booleans, null, undefined and objects</p>
-<h3 id="this-and-invocation-pattern"><a href="#this-and-invocation-pattern" class="headerlink" title="this and invocation pattern"></a>this and invocation pattern</h3><ul>
+<h3 id="Types-in-JavaScript"><a href="#Types-in-JavaScript" class="headerlink" title="Types in JavaScript"></a>Types in JavaScript</h3><hr>
+<ul>
+<li>Numbers</li>
+<li>Strings</li>
+<li>Booleans</li>
+<li>null</li>
+<li>undefined</li>
+<li>objects</li>
+</ul>
+<h3 id="this-and-invocation-pattern"><a href="#this-and-invocation-pattern" class="headerlink" title="this and invocation pattern"></a>this and invocation pattern</h3><hr>
+<ul>
 <li>The <strong>function invocation pattern</strong>, <strong>this</strong> will be bound to global object</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -411,13 +420,19 @@ height:50vh;
 <li>The <strong>constructor invocation pattern</strong>, with <strong>new</strong> prefix will create a new object, in this case, <strong>this</strong> will be bound to that new object.</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.status = string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = <span class="keyword">new</span> Quo(<span class="string">"test"</span>)</span><br><span class="line"><span class="comment">// obj.status = test</span></span><br><span class="line"><span class="comment">// if invoked without new, this will be bound to the global object</span></span><br></pre></td></tr></table></figure>
-<p>If the function is defined by arrow function, you can’t invoke it with <strong>new</strong> prefix.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the function is defined by arrow function, you can’t invoke it with <strong>new</strong> prefix.</p>
 <ul>
-<li>The <strong>apply invocation pattern</strong></li>
+<li><p>The <strong>apply invocation pattern</strong></p>
+<ul>
+<li><p>The <strong>apply</strong> method lets us construct an array of args to use to invoke a function, it takes two params.</p>
+</li>
+<li><p>The first is the value that should be bound to <strong>this</strong>, the second is an array of params.</p>
+</li>
 </ul>
-<p>The <strong>apply</strong> method lets us construct an array of args to use to invoke a function, it takes two params.</p>
-<p>The first is the value that should be bound to <strong>this</strong>, the second is an array of params.</p>
-<h3 id="Currying"><a href="#Currying" class="headerlink" title="Currying"></a>Currying</h3><p>There is a way to reduce functions of more than one argument to functions of one argument</p>
+</li>
+</ul>
+<h3 id="Currying"><a href="#Currying" class="headerlink" title="Currying"></a>Currying</h3><hr>
+<p>There is a way to reduce functions of more than one argument to functions of one argument</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">multiply = <span class="function">(<span class="params">n, m</span>) =&gt;</span> (n * m)</span><br><span class="line">multiply(<span class="number">3</span>, <span class="number">4</span>) === <span class="number">12</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">curryedMultiply = <span class="function">(<span class="params">n</span>) =&gt;</span> (m) =&gt; multiply(n, m)</span><br><span class="line">triple = curryedMultiply(<span class="number">3</span>)</span><br><span class="line"><span class="comment">// triple = (m) =&gt; multiply(3, m)</span></span><br><span class="line">triple(<span class="number">4</span>) === <span class="number">12</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>Some examples:</p>
 <ul>
@@ -432,10 +447,10 @@ height:50vh;
     <!-- license  -->
     
         <div class="license-wrapper">
-            <p>原文作者：<a href="https://weiwang120.github.io/Blog">王二小</a>
+            <p>Author：<a href="https://weiwang120.github.io/Blog">王二小</a>
             <p>原文链接：<a href="https://weiwang120.github.io/Blog/2018/09/30/javascript/">https://weiwang120.github.io/Blog/2018/09/30/javascript/</a>
             <p>发表日期：<a href="https://weiwang120.github.io/Blog/2018/09/30/javascript/">September 30th 2018, 12:49:13 am</a>
-            <p>更新日期：<a href="https://weiwang120.github.io/Blog/2018/09/30/javascript/">September 30th 2018, 12:49:29 am</a>
+            <p>更新日期：<a href="https://weiwang120.github.io/Blog/2018/09/30/javascript/">September 30th 2018, 1:51:13 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -571,6 +586,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
